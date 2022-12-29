@@ -10,7 +10,9 @@ You can edit the file `app/routes.js` to process requests from the browser and s
 
 ## Requests and responses
 
-When you enter http://localhost:3000 in a browser, the browser sends a request to the Prototype Kit. The kit processes that request and sends a response.
+![Diagram showing a browser on laptop with an arrow labelled 'request' going to a server. An arrow labelled 'response' comes back to the laptop.](/public/docs/v13/images/docs/request-response.svg)
+
+When you enter http://localhost:3000 in a browser, the browser sends a request to the server - the Prototype Kit. The kit processes that request and sends a response.
 
 By default, the Prototype Kit looks in the `app/views` folder for a corresponding file, turns the file into a complete HTML page and sends that as a response to the browser.
 
@@ -38,20 +40,20 @@ This route will pick a random number between 1 and 6, then display a 'dice' page
 
 Let's look at each bit of this route code separately.
 
-### router.get
+`router.get`
 
 There are 2 ways a browser can make a request. They are 'get' and 'post':
 
-* a get request is when you enter an address or follow a link
+* a get request is when you enter an address in the browser or follow a link
 * a post request is when you submit a form
 
 This route will only run when the request is get, not post.
 
-### '/games/dice'
+`'/games/dice'`
 
 This is called the request path.
 
-### function(request, response)
+`function(request, response)`
 
 This is our function (piece of code) to process the request. It has access to 2 variables or pieces of data:
 
@@ -62,23 +64,25 @@ The request contains all the data related to the request from the browser. For e
 
 The response lets us send a response back to the browser.
 
-### var dice = Math.ceil(Math.random()*6)
+`var dice = Math.ceil(Math.random()*6)`
 
 This line simulates a dice throw. It stores a random number between 1 and 6 in the variable called dice.
 
-### response.locals.dice = dice
+`response.locals.dice = dice`
 
-This line makes the dice variable available to the view or page.
+This line makes the dice variable available to the page.
 
-### response.render('dice')
+`response.render('dice')`
 
-Finally, we 'render' the page called 'dice' (don't add the extension `.html`. The kit does that automatically.
+Finally, we 'render' the page called 'dice'. (Do not add the extension `.html` - the kit does that automatically.)
 
-On the page called 'dice', the variable is:
+On the page called 'dice', we can display the `dice` variable like this:
 
 ```
-**{{ dice }}**
+{{ dice }}
 ```
+
+Find out [how to make branching journeys using routes](./branching-journeys)
 
 
 [Express documentation for routes](http://expressjs.com/4x/api.html#app.VERB)
