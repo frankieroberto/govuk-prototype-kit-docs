@@ -42,7 +42,7 @@ Let's look at each bit of this route code separately.
 
 `router.get`
 
-The router handles all the requests. There are 2 ways a browser can make a request. They are 'get' and 'post':
+The router handles all the requests. There are 2 ways a browser can make a request: 'get' and 'post'.
 
 * a get request is when you enter an address in the browser or follow a link
 * a post request is when you submit a form
@@ -55,7 +55,7 @@ This is called the request path.
 
 `function(request, response)`
 
-This is our function (piece of code) to process the request. It has access to 2 variables or pieces of data:
+This is our function (piece of code) to process the request. It has access to 2 variables (pieces of data):
 
 * request
 * response
@@ -85,4 +85,4 @@ On the page called 'dice', we can display the `dice` variable like this:
 Find out [how to make branching journeys using routes](./branching-journeys)
 
 
-[Express documentation for routes](http://expressjs.com/4x/api.html#app.VERB)
+[Express documentation for routes](https://expressjs.com/en/guide/routing.html)
