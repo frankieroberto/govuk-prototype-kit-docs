@@ -42,7 +42,7 @@ Let's look at each bit of this route code separately.
 
 `router.get`
 
-There are 2 ways a browser can make a request. They are 'get' and 'post':
+The router handles all the requests. There are 2 ways a browser can make a request. They are 'get' and 'post':
 
 * a get request is when you enter an address in the browser or follow a link
 * a post request is when you submit a form
